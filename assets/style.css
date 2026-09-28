@@ -333,6 +333,38 @@ a.card:hover { border-color: var(--saffron); transform: translateY(-4px); }
 .directory td:nth-child(2) { color: var(--muted); font-size: 15px; }
 .directory td:last-child { white-space: nowrap; padding-right: 0; }
 
+/* ---------- form ---------- */
+.form-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: clamp(32px, 5vw, 88px); align-items: start; }
+.form-grid h2 { font-size: clamp(40px, 6vw, 92px); margin-top: 20px; }
+.form-grid .lede { margin-top: 28px; }
+.form-note { margin-top: 20px; font-size: 15px; color: var(--muted-light); }
+.form-note a { color: var(--paper); border-bottom: 1px solid var(--line-light); padding-bottom: 2px; transition: color .3s, border-color .3s; }
+.form-note a:hover { color: var(--saffron); border-color: var(--saffron); }
+.form { display: grid; gap: 22px; }
+.field-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.field label { display: block; margin-bottom: 8px; font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--muted-light); }
+.field label span { letter-spacing: .04em; text-transform: none; font-weight: 400; }
+.field input, .field select, .field textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font: inherit; font-size: 16px;
+  color: var(--paper);
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid var(--line-light);
+  border-radius: 4px;
+  transition: border-color .3s, background .3s;
+}
+.field textarea { resize: vertical; min-height: 140px; }
+.field select { appearance: none; -webkit-appearance: none; padding-right: 44px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23FFFFFF' stroke-width='1.5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; }
+.field select option { color: var(--ink); background: var(--paper); }
+.field input:hover, .field select:hover, .field textarea:hover { border-color: rgba(255, 255, 255, .4); }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--saffron); background-color: rgba(255, 255, 255, .1); }
+.form .btn { justify-self: start; cursor: pointer; font-family: inherit; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form-done { margin-bottom: 28px; padding: 28px; border: 1px solid var(--saffron); border-radius: 4px; }
+.form-done h3 { font-family: var(--serif); font-weight: 300; font-size: 34px; letter-spacing: -.02em; }
+.form-done p { margin-top: 8px; color: var(--muted-light); }
+
 /* ---------- cta band ---------- */
 .cta { padding: clamp(72px, 9vw, 136px) 0; }
 .cta-grid { display: flex; align-items: end; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
@@ -352,7 +384,7 @@ a.card:hover { border-color: var(--saffron); transform: translateY(-4px); }
 
 /* ---------- tablet ---------- */
 @media (max-width: 1000px) {
-  .hero-grid, .feature-grid, .detail-grid, .split { grid-template-columns: minmax(0, 1fr); }
+  .hero-grid, .feature-grid, .detail-grid, .split, .form-grid { grid-template-columns: minmax(0, 1fr); }
   .detail-grid.flip > .map { order: 0; }
   .hero-grid { align-items: start; }
   .route { max-width: 520px; }
@@ -418,6 +450,8 @@ a.card:hover { border-color: var(--saffron); transform: translateY(-4px); }
   .person .role { align-self: start; }
 
   .info > div { grid-template-columns: minmax(0, 1fr); gap: 6px; padding: 18px 0; }
+  .field-row { grid-template-columns: minmax(0, 1fr); }
+  .form .btn { justify-self: stretch; justify-content: center; }
   .map { min-height: 340px; }
 
   .directory thead { display: none; }

@@ -69,6 +69,63 @@
   </div>
 </section>
 
+<section class="section dark" id="enquiry">
+  <div class="wrap">
+    <div class="form-grid">
+      <div>
+        <p class="eyebrow reveal">Send a message</p>
+        <h2 class="display reveal" style="--d:.08s">Write <em>to us.</em></h2>
+        <p class="lede reveal" style="--d:.16s">Tell us which brand your enquiry is about and we will pass it to the right team.</p>
+        <p class="form-note reveal" style="--d:.24s">Prefer to talk? Call <a href="tel:+66834359910">+66 83 435 9910</a>.</p>
+      </div>
+      <div class="reveal" style="--d:.1s">
+        <div class="form-done" id="form-done" role="status" hidden>
+          <h3>Thank you.</h3>
+          <p>Your message has been sent. We will reply as soon as we can.</p>
+        </div>
+        <form class="form" id="contact-form" action="https://formsubmit.co/globalgroupofcompanies001@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New enquiry from the Global Group website">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="">
+          <p class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></p>
+          <div class="field">
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="100">
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required maxlength="150">
+            </div>
+            <div class="field">
+              <label for="f-phone">Phone <span>(optional)</span></label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="30">
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-brand">Enquiry about</label>
+            <select id="f-brand" name="brand">
+              <option>General enquiry</option>
+              <option>KHR</option>
+              <option>YumTown VTE</option>
+              <option>YT Hotel &amp; Hostel</option>
+              <option>Pun Kao</option>
+              <option>YumTown BKK</option>
+              <option>Distribution of National Food</option>
+              <option>Rice Import &amp; Exporter</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-message">Message</label>
+            <textarea id="f-message" name="message" rows="5" required maxlength="3000"></textarea>
+          </div>
+          <button class="btn solid" type="submit">Send message <span class="arrow" aria-hidden="true">&rarr;</span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section tint">
   <div class="wrap">
     <div class="section-head">

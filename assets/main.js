@@ -39,6 +39,20 @@
     targets.forEach(function (el) { io.observe(el); });
   }
 
+  // contact form: return here after sending, then show the thank-you note
+  var form = document.getElementById('contact-form');
+  if (form) {
+    var here = location.origin + location.pathname;
+    form.querySelector('[name="_next"]').value = here + '#sent';
+    if (location.hash === '#sent') {
+      var done = document.getElementById('form-done');
+      done.hidden = false;
+      form.hidden = true;
+      history.replaceState(null, '', here);
+      done.scrollIntoView({ block: 'center' });
+    }
+  }
+
   // cursor parallax (pointer devices only)
   var movers = document.querySelectorAll('[data-depth]');
   if (movers.length && !reduced && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
