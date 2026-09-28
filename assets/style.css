@@ -248,6 +248,13 @@ body::after {
 .plate svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 .plate .mono { position: absolute; left: 8%; bottom: 6%; font-family: var(--serif); font-style: italic; font-weight: 300; font-size: clamp(22px, 2.4vw, 34px); color: var(--paper); opacity: .92; }
 
+.banner-wrap + .section, .banner-wrap + div > .section { padding-top: clamp(56px, 7vw, 104px); }
+.banner { margin: 0; aspect-ratio: 21 / 9; border-radius: 4px; overflow: hidden; background: var(--paper-deep); }
+.banner img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.6s var(--ease); }
+.banner:hover img { transform: scale(1.03); }
+.card-img { margin: calc(-1 * clamp(28px, 3.4vw, 52px)); margin-bottom: clamp(24px, 3vw, 40px); aspect-ratio: 16 / 9; overflow: hidden; border-radius: 3px 3px 0 0; background: var(--paper-deep); }
+.card-img img { width: 100%; height: 100%; object-fit: cover; }
+
 /* ---------- cards ---------- */
 .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); }
 .card {
@@ -398,6 +405,7 @@ a.card:hover { border-color: var(--saffron); transform: translateY(-4px); }
   .brand:hover .brand-name { transform: none; }
 
   .plates { aspect-ratio: 1 / 1; }
+  .banner { aspect-ratio: 4 / 3; }
   .cards { grid-template-columns: minmax(0, 1fr); }
 
   .people-grid { grid-template-columns: minmax(0, 1fr); gap: 0; }
