@@ -90,8 +90,9 @@ body::after {
   box-shadow: 0 1px 0 var(--line);
 }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
-.wordmark { font-family: var(--serif); font-size: 21px; letter-spacing: -.01em; white-space: nowrap; }
-.wordmark span { color: var(--saffron); font-style: italic; }
+.wordmark { display: inline-flex; align-items: center; gap: 12px; font-family: var(--serif); font-size: 21px; letter-spacing: -.01em; white-space: nowrap; }
+.wordmark em { color: var(--saffron); font-style: italic; }
+.logo-mark { display: block; flex: none; height: 34px; width: auto; overflow: visible; }
 .nav-links { display: flex; align-items: center; gap: 34px; font-size: 14.5px; font-weight: 500; }
 .nav-links a:not(.btn) { position: relative; padding: 6px 0; }
 .nav-links a:not(.btn)::after {
@@ -374,7 +375,8 @@ a.card:hover { border-color: var(--saffron); transform: translateY(-4px); }
 /* ---------- footer ---------- */
 .site-footer { background: var(--ink); color: var(--paper); padding: clamp(56px, 7vw, 96px) 0 36px; border-top: 1px solid var(--line-light); }
 .foot-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr)); gap: clamp(28px, 4vw, 64px); }
-.foot-grid .wordmark { font-size: 26px; }
+.foot-grid .wordmark { font-size: 26px; gap: 14px; }
+.foot-grid .logo-mark { height: 42px; }
 .foot-grid > div > p { margin-top: 18px; max-width: 24em; font-size: 15px; color: var(--muted-light); }
 .foot-grid h4 { margin: 0 0 18px; font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--saffron); }
 .foot-grid li { margin-bottom: 10px; font-size: 15px; color: var(--muted-light); line-height: 1.5; }
@@ -400,7 +402,10 @@ a.card:hover { border-color: var(--saffron); transform: translateY(-4px); }
 @media (max-width: 760px) {
   body { font-size: 16px; }
   .nav { height: 64px; }
-  .wordmark { font-size: 19px; }
+  .wordmark { font-size: 19px; gap: 10px; }
+  .logo-mark { height: 28px; }
+  .foot-grid .wordmark { font-size: 22px; gap: 12px; }
+  .foot-grid .logo-mark { height: 34px; }
   .nav-toggle { display: block; }
   .nav-links {
     position: fixed; inset: 0;
@@ -468,6 +473,14 @@ a.card:hover { border-color: var(--saffron); transform: translateY(-4px); }
   .cta-grid { align-items: start; flex-direction: column; gap: 32px; }
   .cta .actions { width: 100%; }
   .foot-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+}
+
+/* ---------- small phones ---------- */
+@media (max-width: 359px) {
+  .wordmark { font-size: 17px; gap: 8px; }
+  .logo-mark { height: 26px; }
+  .foot-grid .wordmark { font-size: 20px; gap: 10px; }
+  .foot-grid .logo-mark { height: 30px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
